@@ -5,3 +5,6 @@ Run `npm run dev` for start the server. Navigate to `http://localhost:3333/`. Th
 #Routes:
 
 - Users
+    - /users (query) - list all user or query search for name
+    - /users/:id - filter by ID
+    - /users - create user

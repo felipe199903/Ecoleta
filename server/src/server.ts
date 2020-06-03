@@ -1,15 +1,40 @@
 import express, { response } from 'express';
 
 const app = express();
+app.use(express.json());
+
+const users = [
+    'Felipe',
+    'Lineo',
+    'Yami'
+]
 
 app.get('/users', (request, response) => {
     console.log('Listagem de usuarios');
+    const search = String(request.query.search);
+    const filteredUsers = search ? users.filter(user => user.includes(search)) : users;
 
-    response.json([
-        'Felipe',
-        'Lineo',
-        'Yami'
-    ]);
+    return response.json(filteredUsers);
+});
+
+app.get('/users/:id', (request, response) => {
+    console.log('Listagem de usuarios por ID');
+    const id = Number(request.params.id);
+    const user = users[id];
+
+    return response.json(user);
+});
+
+app.post('/users', (request, response) => {
+    console.log('Criação de usuarios');
+    const data = request.body;
+
+    const user = {
+        name: data.name,
+        email: data.email
+    }
+
+    return response.json(user);
 });
 
 app.listen(3333);
