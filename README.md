@@ -2,9 +2,9 @@
     <img alt="Ecoleta" title="Ecoleta" src=".github/ecoleta.svg" width="220px" />
 
 
-<h1 align="center">
+<h4 align="center">
     Next Level Week #01
-</h1>
+</h4>
 
 <p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
